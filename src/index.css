@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Hide scrollbar but allow scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* shimmer.css */
+.skeleton {
+  background-color: #e2e8f0; /* Tailwind zinc-200 */
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 150%;
+  background: linear-gradient(
+    90deg,
+    rgba(226, 232, 240, 0) 0%,
+    rgba(203, 213, 225, 0.5) 50%,
+    rgba(226, 232, 240, 0) 100%
+  );
+  animation: shimmer 1.6s infinite;
+  z-index: 10;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 100%;
+  }
+}
