@@ -5,10 +5,12 @@ import Restaurant from './components/Restaurant'
 import RestaurantData from './components/RestaurantData'
 import SearchPage from './components/SearchPage'
 import Checkout from './components/Checkout'
+import AccessAlert from './components/AccessAlert'
 
 const App = () => {
   return (
     <>
+      <AccessAlert />
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
